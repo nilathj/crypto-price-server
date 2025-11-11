@@ -17,7 +17,7 @@ def priceServer():
     prices = getPrices()
     responsePrices = createResponse(prices)
     #print('publish:', responsePrices)
-    mqttpublish.single(mqttTopic, responsePrices, qos=0, retain=False, hostname=mqttHost,
+    mqttpublish.single(mqttTopic, responsePrices, qos=0, retain=True, hostname=mqttHost,
         port=int(mqttPort), client_id="pricesMqtt", keepalive=60, will=None, auth=None,
         tls=None) 
 
